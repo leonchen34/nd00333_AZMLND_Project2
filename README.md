@@ -1,12 +1,12 @@
 
 # Machine Learning Operations
 
-In this project, Azure AutoML is used to produce a cloud-based machine learning production model with Bank Marketing data. The model could be used to predict if a client would subscribe to a term deposit. Steps are shown how the model is produced,deployed and consumed. Also a pipeline will be created, published and consumed.
+In this project, Bank Marketing data is utilized to create a cloud-based machine learning model that predicts whether a client would subscribe to a term deposit. First AML Studio AutoML method is employed, showcasing the steps involved in generating,deploying, and consuming the best model. Also AML Python SDK is employed to construct and publish an AutoML pipeline. The published pipeline endpoint can be triggered to execute experiment runs. 
 <br><br>
 ## Architectural Diagram
 <br>
 
-### Create AutoML run and consume deployed model: <br><br>
+### Create experiment with AML Studio AutoML and Deploy best model for consumption : <br><br>
 
 ```mermaid
 flowchart TD
@@ -42,21 +42,21 @@ flowchart TD
 ## Key Steps
 <br>
 
-## The following are steps to create AutoML runs: <br><br>
+## The following are steps to create and deploy AutoML best model: <br><br>
 
 Created a dataset from downloaded bank marketing data. <br><br>
 ![created dataset](screenshots/RegisteredDataSetForAutoML.png)
 
-Executed AutoML run from AzureML Studio, and wait for the experiment to complete. <br><br>
+Executed AutoML run from AzureML Studio, and wait for the experiment run to complete. <br><br>
 ![completed automl experiment run](screenshots/CompletedExperimentForAutoML.png)
 
-Examined the experiment result and found out that VotingEnsemble is the best model.<br><br>
+Examined the experiment run results and found out that VotingEnsemble is the best model.<br><br>
 ![best model](screenshots/AutoMLRunBestModel.png)
 
 Deployed the best model, and enabled deployed endpoint Application Insights by running provided logs.py script. <br><br>
 ![enable application insight](screenshots/EnableapplicationInsight.png)
 
-The deployed best model endpoint. <br><br>
+The deployed model endpoint. <br><br>
 ![deployed endpoint](screenshots/BestModelEndpoint.png)
 
 Downloaded deployed endpoint API swagger.json file, and ran locally to show the API HTTP methods and response.<br><br>
@@ -65,16 +65,16 @@ Downloaded deployed endpoint API swagger.json file, and ran locally to show the 
 Retrieved the deployed endpoint information. <br><br>
 ![endpoint info](screenshots/EndpointInfo.png)
 
-Modified endpoint.py script with deployed endpoint URL and key, and ran the script to predict for two test clients. From model explaination, "duration" is the most important feature on the results. Larger value (>1000) flip the result from 'no' to 'yes' for the first client.<br><br>
+Modified endpoint.py script with deployed endpoint URL and key, and ran the script to predict for two test clients. From model explaination, "duration" is the most important feature. Larger value (>1000) flip the result from 'no' to 'yes' for the first client.<br><br>
 ![endpoint consumption](screenshots/EndpointConsumption.png)
 
-Used Apache Benchmark script benchmark.sh to retrieve performance results.<br><br>
+Used Apache Benchmark script benchmark.sh to get performance results.<br><br>
 ![benchmark run](screenshots/BenchMarkRun.png)
 
 
-## The following are steps to create and publish an ML pipeline:<br><br>
+## The following are steps to create and publish ML pipeline:<br><br>
 
-Using Python SDK, an AutoML pipeline was created. <br><br>
+Using AML Python SDK, an AutoML pipeline was created. <br><br>
 ![created pipeline](screenshots/CreatedPipeline.png)
 
 A "BankMarketing Dataset" was also created for the pipeline.<br><br>
