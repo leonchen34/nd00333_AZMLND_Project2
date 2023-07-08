@@ -25,8 +25,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-	A[Create NoteBook file] --> B[Define Workspace and Experiment]
-	B --> C[Create or attach compute cluster]
+	B[Define Workspace and Experiment] --> C[Create or attach compute cluster]
 	C --> D[Create and register dataset]
 	D --> E[Create AutoMLStep and Pipleline]
 	E --> F{Submit pipeline and check for rundetails}
@@ -97,3 +96,13 @@ Created script pipeline.py to interact with the the published pipeline endpoint 
 
 ## Standout Suggestions
 *TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
+
+1. Ran Apache Benchmark script from local computer to loadtest endpoint.
+2. Tried to create Parallel Run Step to test trained pipeline model using downloaded bankmarketing_test.csv data.
+See checked in files "parallel-run.ipynb" and "score.py". First Registered the best model from pipeline run as shown below (from aml-pipelines-with-automated-machine-learning-step.ipynb)
+![register model](screenshots/RegisterBestPipelineModel.png)
+<br><br>
+ 
+ But when executing the parallel-run.ipynb, got the following pipeline run log error
+![failed pipeline run](screenshots/FailedParellelStepLog.png)
+
