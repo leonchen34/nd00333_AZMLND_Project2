@@ -91,18 +91,24 @@ Published the pipeline as "Bankmarketing Train" from Jupyter Notebook. <br><br>
 Created script pipeline.py to interact with the the published pipeline endpoint to trigger an experiment "my-test-endpoint". <br><br>
 ![trigered pipeline run](screenshots/CompletedPipelineRun.png)
 
-## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
+<br><br>
+## Screen Recording:
+
+[<h1>Youtube Screentcast Link</h1>](https://youtu.be/NlivYU8uRk4)
+
+<br><br>
 
 ## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
 
-1. Ran Apache Benchmark script from local computer to loadtest endpoint.
-2. Tried to create Parallel Run Step to test trained pipeline model using downloaded bankmarketing_test.csv data.
-See checked in files "parallel-run.ipynb" and "score.py". First Registered the best model from pipeline run as shown below (from aml-pipelines-with-automated-machine-learning-step.ipynb)
+1. Ran Apache Benchmark load test to check endpoint endpoint. Screen capture is included.
+
+2. To make bulk tests/predictions more efficient for the deployed model, tried to create Parallel Run pipeline.
+<br>
+First Registered the best model from pipeline run as shown below (from aml-pipelines-with-automated-machine-learning-step.ipynb) <br><br>
 ![register model](screenshots/RegisterBestPipelineModel.png)
 <br><br>
- 
- But when executing the parallel-run.ipynb, got the following pipeline run log error
-![failed pipeline run](screenshots/FailedParellelStepLog.png)
+ Then created files "parallel-run.ipynb" and "score.py".
+ But when executing parallel-run.ipynb, got the following pipeline run log error <br><br>
+ ![failed parallel step](screenshots/FailedParellelStepLog.png)<br><br>
+ Hopefully you may shine some light on the problem.
 
