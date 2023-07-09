@@ -6,7 +6,7 @@ In this project, Bank Marketing data is utilized to create a cloud-based machine
 ## Architectural Diagram
 <br>
 
-### Create experiment with AML Studio AutoML and Deploy best model for consumption : <br><br>
+### Create experiment with AutoML and Deploy best model for consumption : <br><br>
 
 ```mermaid
 flowchart TD
@@ -19,7 +19,7 @@ flowchart TD
 	D --> H[Apache Benchmark run]
 ```
 
-<br><br><br>
+<br><br>
 
 ### Create and Publish ML pipeline with SDK <br><br>
 
@@ -36,7 +36,7 @@ flowchart TD
 
 
 ```
-<br><br><br><br>
+<br><br><br>
 
 ## Key Steps
 <br>
@@ -52,7 +52,7 @@ Executed AutoML run from AzureML Studio, and wait for the experiment run to comp
 Examined the experiment run results and found out that VotingEnsemble is the best model.<br><br>
 ![best model](screenshots/AutoMLRunBestModel.png)
 
-Deployed the best model, and enabled deployed endpoint Application Insights by running provided logs.py script. <br><br>
+Deployed the best model, and enabled deployed endpoint Application Insights by running logs.py script. <br><br>
 ![enable application insight](screenshots/EnableapplicationInsight.png)
 
 The deployed model endpoint. <br><br>
@@ -79,7 +79,7 @@ Using AML Python SDK, an AutoML pipeline was created. <br><br>
 A "BankMarketing Dataset" was also created for the pipeline.<br><br>
 ![pipeline dataset](screenshots/PipelineDataSet.png)
 
-Excuted the pipeline from Jupyter Notebook (see saved aml-pipelines-with-automated-machine-learning-step.ipynb), and published the pipeline. <br><br>
+Excuted the pipeline from Jupyter Notebook (see aml-pipelines-with-automated-machine-learning-step.ipynb), and published the pipeline. <br><br>
 ![published pipeline](screenshots/PublishedPipeline.png)
 
 Used RunDetails Widget to show run information.<br><br>
@@ -99,16 +99,17 @@ Created script pipeline.py to interact with the the published pipeline endpoint 
 
 ## Standout Suggestions
 
-1. Ran Apache Benchmark load test to check endpoint endpoint. Screen capture is included above.
+1. Ran Apache Benchmark load test to check deployed endpoint performance. Screen capture is included above.
 
 2. To make bulk tests/predictions more efficient for the deployed model, tried to create Parallel Run pipeline.
 <br>
 First Registered the best model from pipeline run as shown below (from aml-pipelines-with-automated-machine-learning-step.ipynb) <br><br>
+
 ![register model](screenshots/RegisterBestPipelineModel.png)
 
  Then created files "parallel-run.ipynb" and "score.py".
  But when executing parallel-run.ipynb, got the following pipeline run log error <br><br>
  ![failed parallel step](screenshots/FailedParellelStepLog.png)
  
- Would appreciate it if can help me to figure out the problem.
+ Would appreciate it if helping me to figure out the problem.
 
