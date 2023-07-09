@@ -96,7 +96,7 @@ Created script pipeline.py to interact with the the published pipeline endpoint 
 ### Click the following link 
 <br><br>
 [![Screen Cast](screenshots/ScreenCast.png)](https://youtu.be/NlivYU8uRk4)
-<br><br>
+
 ## Standout Suggestions
 
 1. Ran Apache Benchmark load test to check endpoint endpoint. Screen capture is included above.
@@ -105,10 +105,10 @@ Created script pipeline.py to interact with the the published pipeline endpoint 
 <br>
 First Registered the best model from pipeline run as shown below (from aml-pipelines-with-automated-machine-learning-step.ipynb) <br><br>
 ![register model](screenshots/RegisterBestPipelineModel.png)
-<br><br>
+
  Then created files "parallel-run.ipynb" and "score.py".
  But when executing parallel-run.ipynb, got the following pipeline run log error <br><br>
  ![failed parallel step](screenshots/FailedParellelStepLog.png)
- <br><br>
+ 
  Would appreciate it if can help me to figure out the problem.
 
