@@ -2,7 +2,6 @@ import requests
 import json
 
 # URL for the web service, should be similar to:
-# 'http://8530a665-66f3-49c8-a953-b82a2d312917.eastus.azurecontainer.io/score'
 scoring_uri = 'http://65598e37-767b-4966-8e42-46df2f2b50d4.eastus.azurecontainer.io/score'
 # If the service is authenticated, set the key or token
 key = '5JDRdlQi3BvAEkP27bH34cquWrgSo7rG'
@@ -20,7 +19,7 @@ data = {
             "contact": "cellular",
             "day_of_week": "mon",
             "default": "no",
-            "duration": 1071,
+            "duration": 971,
             "education": "university.degree",
             "emp.var.rate": -1.8,
             "euribor3m": 1.299,

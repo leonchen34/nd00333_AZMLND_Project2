@@ -10,7 +10,7 @@ auth_header = interactive_auth.get_authentication_header()
 
 response = requests.post(pipeline_endpoint_uri, 
                          headers=auth_header, 
-                         json={"ExperimentName": "my-test-endpoint"}
+                         json={"ExperimentName": "my-test-endpoint3"}
                         )
 
 try:

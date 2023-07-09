@@ -92,15 +92,15 @@ Created script pipeline.py to interact with the the published pipeline endpoint 
 ![trigered pipeline run](screenshots/CompletedPipelineRun.png)
 
 <br><br>
-## Screen Recording:
+## Screen Recording:<br>
 
-[<h1>Youtube Screentcast Link</h1>](https://youtu.be/NlivYU8uRk4)
+![Youtube Screentcast Link](https://youtu.be/NlivYU8uRk4)
 
 <br><br>
 
 ## Standout Suggestions
 
-1. Ran Apache Benchmark load test to check endpoint endpoint. Screen capture is included.
+1. Ran Apache Benchmark load test to check endpoint endpoint. Screen capture is included above.
 
 2. To make bulk tests/predictions more efficient for the deployed model, tried to create Parallel Run pipeline.
 <br>
@@ -110,5 +110,5 @@ First Registered the best model from pipeline run as shown below (from aml-pipel
  Then created files "parallel-run.ipynb" and "score.py".
  But when executing parallel-run.ipynb, got the following pipeline run log error <br><br>
  ![failed parallel step](screenshots/FailedParellelStepLog.png)<br><br>
- Hopefully you may shine some light on the problem.
+ Appreciate it if you can help me to figure out the problem.
 
