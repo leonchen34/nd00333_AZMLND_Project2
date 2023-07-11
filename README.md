@@ -95,7 +95,7 @@ First Registered the best model from pipeline run as shown below (from aml-pipel
 
  ## Future Improvement
 
- 1. Some preprocessing on the data can be done to improve the training efficiency, for example converting feature value from string to number type, such as "y" field from "yes" and "no" to 1 and 0, "married" field to 1 and 0. Also some features which have no much effect on target, such as "contact" method, "job" type etc, can be dropped.
+ 1. Some preprocessing on training data can be done to improve efficiency, for example converting feature value from string to number type, such as "y" field from "yes" and "no" to 1 and 0, "married" field to 1 and 0. Also some features which have no much effect on target, such as "contact" method, "job" type etc, can be dropped.
 
  2. Some models, such as "KNN" can be blocked in AutoMLConfig, so that AutoML will not waste time on unpromising algorithms.
 
