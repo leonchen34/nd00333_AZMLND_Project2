@@ -6,36 +6,17 @@ In this project, Bank Marketing data is utilized to create a cloud-based machine
 ## Architectural Diagram
 <br>
 
+
 ### Create experiment with AutoML and Deploy best model for consumption : <br><br>
 
-```mermaid
-flowchart TD
-	A[Create data set from bank marketing data] --> B[Create or attach a VM cluster and do AutoML Training]
-	B --> C[Retrieve Best Model]
-	C --> D{Deploy Best Model}
-	D --> E[Enable app insights]
-	D --> F[Swagger run to show API]
-	D --> G[Consume deployed endpoint]
-	D --> H[Apache Benchmark run]
-```
+![automl](screenshots/architecture1.drawio.svg)<br>
+
 
 <br><br>
 
 ### Create and Publish ML pipeline with SDK <br><br>
 
-```mermaid
-flowchart TD
-	B[Define Workspace and Experiment] --> C[Create or attach compute cluster]
-	C --> D[Create and register dataset]
-	D --> E[Create AutoMLStep and Pipleline]
-	E --> F{Submit pipeline and check for rundetails}
-	F --> G[Retrive best model from pipeline run]
-	F --> H[Publish pipeline]
-	G --> I[Test Model with test data]
-	H --> J[Trigger pipeline runs from published pipeline endpoint]
-
-
-```
+![pipeline](screenshots/architecture2.drawio.svg)
 <br><br><br>
 
 ## Key Steps
@@ -95,9 +76,9 @@ Created script pipeline.py to interact with the the published pipeline endpoint 
 ## Screen Recording:<br>
 ### Click the following link 
 <br><br>
-[![Screen Cast](screenshots/ScreenCast.png)](https://youtu.be/NlivYU8uRk4)
+[![Screen Cast](screenshots/ScreenCast.png)](https://youtu.be/6KabcG_lWus)
 
-## Standout Suggestions
+## Extra Works
 
 1. Ran Apache Benchmark load test to check deployed endpoint performance. Screen capture is included above.
 
@@ -112,4 +93,11 @@ First Registered the best model from pipeline run as shown below (from aml-pipel
  ![failed parallel step](screenshots/FailedParellelStepLog.png)
  
  Would appreciate it if helping me to figure out the problem.
+
+
+ ## Future Improvement
+
+ We can do some preprocessing on the data to improve the training process, for example converting some feature value to number type, such as "y" field from "yes" and "no" to 1 and 0, "married" field to 1 and 0. Also we can drop some features which has no much effect on target, such as "contact" method, "job" type etc. To do it systematically, we can start with a subset of the data, and review the explaination of best model and get some hint on what features to be dropped.
+
+ Another thing we can do is to block some models in AutoMLConfig, so that AutoML will not go through all possible algorithms.
 
