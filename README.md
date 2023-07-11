@@ -1,20 +1,20 @@
 
 # Machine Learning Operations
 
-In this project, Bank Marketing data is utilized to create a cloud-based machine learning model that predicts whether a client would subscribe to a term deposit. First AML Studio AutoML method is employed, showcasing the steps involved in generating,deploying, and consuming the best model. Also AML Python SDK is employed to construct and publish an AutoML pipeline. The published pipeline endpoint can be triggered to execute experiment runs. 
+In this project, Bank Marketing data is utilized to create a cloud-based machine learning model that predicts whether a client would subscribe to a term deposit. First AML Studio AutoML method is employed, showcasing the steps involved in generating,deploying, and consuming the best model. Also Notebook SDK is employed to construct and publish an AutoML pipeline. The published pipeline endpoint can be triggered to execute experiment runs. 
 <br><br>
 ## Architectural Diagram
 <br>
 
 
-### Create experiment with AutoML and Deploy best model for consumption : <br><br>
+### Create and Deploy model with AutoML <br><br>
 
 ![automl](screenshots/architecture1.drawio.svg)<br>
 
 
 <br><br>
 
-### Create and Publish ML pipeline with SDK <br><br>
+### Create and Publish ML pipeline with Notebook SDK <br><br>
 
 ![pipeline](screenshots/architecture2.drawio.svg)
 <br><br><br>
@@ -91,13 +91,11 @@ First Registered the best model from pipeline run as shown below (from aml-pipel
  Then created files "parallel-run.ipynb" and "score.py".
  But when executing parallel-run.ipynb, got the following pipeline run log error <br><br>
  ![failed parallel step](screenshots/FailedParellelStepLog.png)
- 
- Would appreciate it if helping me to figure out the problem.
 
 
  ## Future Improvement
 
- We can do some preprocessing on the data to improve the training process, for example converting some feature value to number type, such as "y" field from "yes" and "no" to 1 and 0, "married" field to 1 and 0. Also we can drop some features which has no much effect on target, such as "contact" method, "job" type etc. To do it systematically, we can start with a subset of the data, and review the explaination of best model and get some hint on what features to be dropped.
+ 1. Some preprocessing on the data can be done to improve the training efficiency, for example converting feature value from string to number type, such as "y" field from "yes" and "no" to 1 and 0, "married" field to 1 and 0. Also some features which have no much effect on target, such as "contact" method, "job" type etc, can be dropped.
 
- Another thing we can do is to block some models in AutoMLConfig, so that AutoML will not go through all possible algorithms.
+ 2. Some models, such as "KNN" can be blocked in AutoMLConfig, so that AutoML will not waste time on unpromising algorithms.
 
